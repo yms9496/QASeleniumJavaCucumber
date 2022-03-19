@@ -6,16 +6,33 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
-
+    
+	// driver object
 	WebDriver driver;
-
+    
+	//constructor of the page
 	public HomePage(WebDriver driver) {
 	    
+		// assign driver
 		this.driver = driver;
+		//initialize the web elements
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy() 
-	private WebElement fassak;
+	//locate home page image
+	@FindBy(xpath = "//img[@src = '/images/Toolsqa.jpg']") 
+	private WebElement HomePage;
+	
+	//locate book store application
+	@FindBy(xpath = "//div[@class = 'card-body']//h5[text() = 'Book Store Application']") 
+	private WebElement BookStoreApplication;
 
+	public WebElement getHomePage() {
+		return HomePage;
+	}
+
+	public WebElement getBookStoreApplication() {
+		return BookStoreApplication;
+	}
+	
 }
