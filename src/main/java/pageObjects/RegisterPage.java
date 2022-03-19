@@ -52,6 +52,10 @@ public class RegisterPage {
 	// locating captcha box
 	@FindBy(xpath = "//div[@id='rc-anchor-cntainer']//div[@class='recaptcha-checkbox-border']")
 	private WebElement captchaCheckBox;
+	
+	//locating error message for not filling the captcha
+	@FindBy(xpath = "//div[@id='output']//p[@id='name']")
+	private WebElement captchaErrorMessage;
 
 	/**
 	 * @return the registerPage
@@ -114,6 +118,13 @@ public class RegisterPage {
 	 */
 	public WebElement getCaptchaCheckBox() {
 		return captchaCheckBox;
+	}
+	
+	/**
+	 * @return the captchaErrorMessage
+	 */
+	public WebElement getCaptchaErrorMessage() {
+		return captchaErrorMessage;
 	}
 
 	// verify register loading or not
@@ -225,6 +236,17 @@ public class RegisterPage {
 		Assert.assertTrue(classAttribute.contains("is-invalid"),
 				"Password field not highlighted with mandatory message");
 
+	}
+	
+	public void verifyCaptchErrorMessageDisplayed(){
+		
+		Assert.assertTrue(captchaErrorMessage.isDisplayed(),"Captcha error message is not displaying");
+	}
+	
+	public String getCaptchaErrorText(){
+		
+		String errorText = captchaErrorMessage.getText();
+		return errorText;
 	}
 
 }
