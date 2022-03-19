@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import junit.framework.Assert;
+
 public class HomePage {
     
 	// driver object
@@ -26,13 +28,31 @@ public class HomePage {
 	//locate book store application
 	@FindBy(xpath = "//div[@class = 'card-body']//h5[text() = 'Book Store Application']") 
 	private WebElement BookStoreApplication;
-
+     
+	//return home page element
 	public WebElement getHomePage() {
 		return HomePage;
 	}
-
+     
+	//return bookstore application element
 	public WebElement getBookStoreApplication() {
 		return BookStoreApplication;
 	}
+	
+	//verify home page is loading or not
+	public void verifyHomePage(){
+		
+		String homePageTitle = "";
+		homePageTitle = driver.getTitle();
+		
+		Assert.assertEquals("ToolsQA",homePageTitle,"Home Page did not load correctly");
+	}
+	
+	//click on bookstore application
+	public void clickBookStore (){
+		
+		BookStoreApplication.click();
+	}
+	
 	
 }
