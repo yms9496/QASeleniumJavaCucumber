@@ -121,83 +121,6 @@ public class RegisterPage {
 	}
 	
 	/**
-<<<<<<< HEAD
-	 * @return the registerPage
-	 */
-	public WebElement getRegisterPage() {
-		return registerPage;
-	}
-
-
-	/**
-	 * @return the registerFormText
-	 */
-	public WebElement getRegisterFormText() {
-		return registerFormText;
-	}
-
-
-	/**
-	 * @return the firstName
-	 */
-	public WebElement getFirstName() {
-		return firstName;
-	}
-
-
-	/**
-	 * @return the lastName
-	 */
-	public WebElement getLastName() {
-		return lastName;
-	}
-
-
-	/**
-	 * @return the userName
-	 */
-	public WebElement getUserName() {
-		return userName;
-	}
-
-
-	/**
-	 * @return the password
-	 */
-	public WebElement getPassword() {
-		return password;
-	}
-
-
-	/**
-	 * @return the registerButton
-	 */
-	public WebElement getRegisterButton() {
-		return registerButton;
-	}
-
-
-	/**
-	 * @return the backToLoginButton
-	 */
-	public WebElement getBackToLoginButton() {
-		return backToLoginButton;
-	}
-
-
-	/**
-	 * @return the captchaCheckBox
-	 */
-	public WebElement getCaptchaCheckBox() {
-		return captchaCheckBox;
-	}
-
-
-	//verify register loading or not 
-	public void verifyRegisterPage(){
-		
-		String registerPageTitle ="";
-=======
 	 * @return the captchaErrorMessage
 	 */
 	public WebElement getCaptchaErrorMessage() {
@@ -208,7 +131,6 @@ public class RegisterPage {
 	public void verifyRegisterPage() {
 
 		String registerPageTitle = "";
->>>>>>> ddf211d6b39b44bfc48c624ba1d785cbcaea63e3
 		registerPageTitle = registerPage.getText();
 
 		Assert.assertEquals("Register", registerPageTitle, "Register Page did not load successfully");
