@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class LoginPage {
 
@@ -87,6 +88,12 @@ public class LoginPage {
 ////////////////////////////////// Reusable Page Methods /////////////////////////////////////////////
 
 
+	// method to verify login page load
+	public void verifyLoginPageLoad() {
+		
+		Assert.assertTrue(LoginPage.isDisplayed(), "Login Page did not load");
+	}
+	
 	// method to login with given username and password
 	public void loginWithCredentials(String username, String password) {
 		
@@ -100,5 +107,42 @@ public class LoginPage {
 		
 		NewUserButton.click();
 	}
+	
+	// method to click on login button
+		public void clickLoginrButton() {
+			
+			LoginButton.click();
+		}
 
+	// method to send user name
+	public void enterUserName(String username) {
+		
+		UserName.sendKeys(username);
+	}
+	
+	// method to send password
+	public void enterPassword(String password) {
+		
+		Password.sendKeys(password);
+	}
+	
+	// method to verify user name is highlighted in red as mandatory field - invoke after clicking login without entering 
+	public void verifyUsernameMandatoryIndication() {
+		
+		// get class attribute from page
+		String classAttribute = UserName.getAttribute("class");
+		
+		// verify tht it is highlighted as mandatry
+		Assert.assertTrue(classAttribute.contains("is-invalid"), "Username not highlighted in red as mandatory");
+	}
+	
+	// method to verify password is highlighted in red as mandatory field - invoke after clicking login without entering 
+	public void verifyPasswordMandatoryIndication() {
+		
+		// get class attribute from page
+		String classAttribute = Password.getAttribute("class");
+		
+		// verify tht it is highlighted as mandatry
+		Assert.assertTrue(classAttribute.contains("is-invalid"), "Password not highlighted in red as mandatory");
+	}
 }
