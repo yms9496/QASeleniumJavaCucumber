@@ -15,7 +15,12 @@ public class ProfilePage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy() 
-	private WebElement fassak;
+	//////////////////////////////////////// WebElement Locators /////////////////////////////////////
+
+	
+	@FindBy(xpath = "//img[@title='Ad.Plus Advertising']") 
+	private WebElement AdClose;
+	
+	
 
 }

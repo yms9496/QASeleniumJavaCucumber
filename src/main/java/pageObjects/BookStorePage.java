@@ -15,7 +15,7 @@ public class BookStorePage {
 	// driver object
 	WebDriver driver;
 
-	// constructor withh initialization of page elements
+	// constructor with initialization of page elements
 	public BookStorePage(WebDriver driver) {
 
 		// initialize driver

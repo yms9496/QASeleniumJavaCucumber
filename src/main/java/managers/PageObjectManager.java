@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import pageObjects.BookDetailsPage;
 import pageObjects.BookStorePage;
+import pageObjects.CommonElements;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.ProfilePage;
@@ -26,6 +27,7 @@ public class PageObjectManager {
 	RegisterPage registerPage;// = new RegisterPage(driver);
 	BookStorePage bookStorePage;// = new BookStorePage(driver);
 	BookDetailsPage bookDetailsPage;//= new BookDetailsPage(driver);
+	CommonElements commonElements;
 	
 	public HomePage getHomepage() {
 
@@ -57,7 +59,10 @@ public class PageObjectManager {
 	public BookDetailsPage getBookDetailsPage() {
 
 		return (bookDetailsPage == null) ? bookDetailsPage = new BookDetailsPage(driver) : bookDetailsPage;
-}
+	}
 	
-	
+	public CommonElements getCommonElements() {
+
+		return (commonElements == null) ? commonElements = new CommonElements(driver) : commonElements;
+	}	
 }

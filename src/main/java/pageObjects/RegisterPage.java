@@ -54,6 +54,78 @@ public class RegisterPage {
 	private WebElement captchaCheckBox;
 	
 	
+	/**
+	 * @return the registerPage
+	 */
+	public WebElement getRegisterPage() {
+		return registerPage;
+	}
+
+
+	/**
+	 * @return the registerFormText
+	 */
+	public WebElement getRegisterFormText() {
+		return registerFormText;
+	}
+
+
+	/**
+	 * @return the firstName
+	 */
+	public WebElement getFirstName() {
+		return firstName;
+	}
+
+
+	/**
+	 * @return the lastName
+	 */
+	public WebElement getLastName() {
+		return lastName;
+	}
+
+
+	/**
+	 * @return the userName
+	 */
+	public WebElement getUserName() {
+		return userName;
+	}
+
+
+	/**
+	 * @return the password
+	 */
+	public WebElement getPassword() {
+		return password;
+	}
+
+
+	/**
+	 * @return the registerButton
+	 */
+	public WebElement getRegisterButton() {
+		return registerButton;
+	}
+
+
+	/**
+	 * @return the backToLoginButton
+	 */
+	public WebElement getBackToLoginButton() {
+		return backToLoginButton;
+	}
+
+
+	/**
+	 * @return the captchaCheckBox
+	 */
+	public WebElement getCaptchaCheckBox() {
+		return captchaCheckBox;
+	}
+
+
 	//verify register loading or not 
 	public void verifyRegisterPage(){
 		
