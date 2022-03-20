@@ -128,12 +128,10 @@ public class RegisterPage {
 	}
 
 	// verify register loading or not
-	public void verifyRegisterPage() {
+	public void verifyRegisterPageLoad() {
 
-		String registerPageTitle = "";
-		registerPageTitle = registerPage.getText();
-
-		Assert.assertEquals("Register", registerPageTitle, "Register Page did not load successfully");
+		String registerPageTitle = registerPage.getText();
+        Assert.assertEquals("Register", registerPageTitle, "Register Page did not load successfully");
 	}
 
 	// click on register button
